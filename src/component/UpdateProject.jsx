@@ -179,9 +179,11 @@ class UpdateProject extends Component {
                         id="buttonReset"
                         class="btn btn-secondary">Reset</button>
                 </form>
-                <div className="footer">
+                {/* <div className="footer">
                     <p>Enjoy the little thing!</p>
-                </div>
+                </div> */}
+                <br/>
+                <br/>
             </div>
         );
     }

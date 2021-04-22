@@ -133,9 +133,11 @@ class UpdateEmployee extends Component {
                      onClick={this.solveReset}>Reset</button>
                     </div>
                 </form>
-                <div className="footer">
+                {/* <div className="footer">
                     <p>Enjoy the little thing!</p>
-                </div>
+                </div> */}
+                <br/>
+                <br/>
             </div>
         );
     }

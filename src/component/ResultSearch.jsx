@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProjectService from '../service/ProjectService';
 import $, { event } from 'jquery';
-import {solveDetail} from './Employees/EmpUtil/EmpAction';
+import {solveDetail, solveId} from './Employees/EmpUtil/EmpAction';
 
 
 class ResultSearch extends Component {
@@ -42,9 +42,18 @@ class ResultSearch extends Component {
         this.props.history.push(`/detail/${id}`);
     }
 
+    updatePro = (id) =>{
+        this.props.history.push(`/update/${id}`);
+    }
+
     detailEmp = (id) =>{
         this.props.solveDetail(id);
         this.props.history.push('/detailEmp');
+    }
+
+    updateEmp = (id) =>{
+        this.props.solveId(id);
+        this.props.history.push('/updateEmp')
     }
 
     render() {
@@ -74,8 +83,12 @@ class ResultSearch extends Component {
                         <td>
                             <button type="button"
                              onClick={()=>this.detailPro(project.project_id)}
-                             className="btn btn-secondary"
+                             className="btn btn-secondary" 
                              >Detail</button>
+                             <button type="button"
+                             onClick={()=>this.updatePro(project.project_id)}
+                             className="btn btn-secondary" style={{marginLeft:"10px"}}
+                             >Update</button>
                         </td>
                     </tr>
             )
@@ -106,6 +119,10 @@ class ResultSearch extends Component {
                             <button type="button" className="btn btn-secondary"
                             onClick = {()=> this.detailEmp(employee.employee_id)}
                             >Detail</button>
+                            <button type="button" className="btn btn-secondary"
+                            onClick = {()=> this.updateEmp(employee.employee_id)}
+                            style={{marginLeft:"10px"}}
+                            >Update</button>
                         </td>
                 </tr>
             )
@@ -161,9 +178,9 @@ class ResultSearch extends Component {
                     </table>
                 </div>
                 <br/>
-                <div className="footer">
+                {/* <div className="header main-footer main-footer p-4 my-3 bg-dark text-white">
                     <p>Enjoy the little thing!</p>
-                </div>
+                </div> */}
             </div>
         );
     }
@@ -177,7 +194,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch =>{
     return{
-        solveDetail : (id) => dispatch(solveDetail(id))
+        solveDetail : (id) => dispatch(solveDetail(id)),
+        solveId : (id) => dispatch(solveId(id))
     }
 }
 

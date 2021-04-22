@@ -63,7 +63,7 @@ class Headercomponent extends Component {
         )
 
         return (
-            <div className="container-header p-4 my-3 bg-dark text-white">
+            <div className="header p-4 my-3 bg-dark text-white">
                 <div className="row">
                     <div className="col-sm-4">
                         <h3 className="project-name">PROJECTS MANAGEMENT</h3>

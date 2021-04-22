@@ -29,9 +29,9 @@ class welcome extends Component {
                     {/* <button className="btn btn-primary" onClick={this.solveLogin}>Login</button> */}
                     {/* <Link to="/login">Login</Link> */}
                 </div>
-                <div className="main-footer">
+                {/* <div className="header main-footer main-footer p-4 my-3 bg-dark text-white">
                     <p>Enjoy the liite thing</p>
-                </div>
+                </div> */}
             </div>
         );
     }

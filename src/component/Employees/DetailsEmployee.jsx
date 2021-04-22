@@ -85,9 +85,9 @@ class DeleteEmployee extends Component {
                     }
                 </table>
                 <br/>
-                <div className="footer">
+                {/* <div className="footer">
                     <p>Enjoy the little thing!</p>
-                </div>
+                </div> */}
             </div>
         );
     }

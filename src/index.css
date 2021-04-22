@@ -59,18 +59,18 @@ code {
 
 /* Css for Footer */
 
-.footer{
+.main-footer{
   background-color: #343a40;
-  text-align: center;
+  /* text-align: center; */
   bottom: 0;
-  position: relative;
-  width: 100%;
+  position: absolute;
+  /* width: 100%; */
   color: white;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   min-height: 50px;
-  padding-top: 18px;
-  margin-top: 10px;
+  /* padding-top: 18px; */
+  /* margin-top: 10px; */
 }
 
 /* Css for List */

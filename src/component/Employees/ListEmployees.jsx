@@ -150,6 +150,7 @@ class ListEmployees extends Component {
                         }
                     </div>
                 </div>
+                <br/>
             </div>
         );
     }

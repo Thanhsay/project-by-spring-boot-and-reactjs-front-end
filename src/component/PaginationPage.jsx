@@ -83,9 +83,6 @@ deleteState(name,id){
         }
 }
 
-solveOnLoad(){
-    alert("hello");
-}
 
 deleteProject(id){
     ProjectService.deleteProject(id).then(res =>{
@@ -166,6 +163,7 @@ deleteProject(id){
                         }
                     </div>
                 </div>
+                <br/>
             </div>
         );
     }
