@@ -45,6 +45,22 @@ class EmployeeOfProject extends Component {
         alert("Added employee: "+name);
     }
 
+    showPosition = (id) =>{
+        if(id == "0"){
+            return "Developer";
+        }else{
+            if(id == "1"){
+                return "Leader";
+            }else{
+                if(id == "2"){
+                    return "Tester";
+                }else{
+                    return "Business Analyst";
+                }
+            }
+        }
+    }
+
     deleteState(project_id, employee_id, name){
         let sta = window.confirm("Do you want to delete employee: "+name);
         if(sta === true){
@@ -78,7 +94,7 @@ class EmployeeOfProject extends Component {
                             employeeProject => 
                             <tr key={employeeProject.employee_id}>
                                 <td>{employeeProject.employeeName}</td>
-                                <td>{employeeProject.position===1? 'Leader' : 'Employee'}</td>
+                                <td>{this.showPosition(employeeProject.position)}</td>
                                 <th>
                                     <button className="btn btn-danger" 
                                     onClick={() => this.deleteState(this.state.project_id, employeeProject.employee_id, employeeProject.employeeName)}>Delete</button>
@@ -99,7 +115,7 @@ class EmployeeOfProject extends Component {
                             employee => 
                                 <tr key={employee.employee_id}>
                                     <td>{employee.employeeName}</td>
-                                    <td>{employee.position===1 ? 'Leader' : 'Employee'}</td>
+                                    <td>{this.showPosition(employee.position)}</td>
                                     <th>
                                         <button className="btn btn-primary" 
                                         onClick={() => this.updateEmployee(employee.employee_id, employee.employeeName)}>Add</button>

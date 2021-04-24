@@ -100,8 +100,10 @@ class AddNewEmployee extends Component {
                         <label>Position</label>
                         <select className="form-control" value={this.state.position}
                          id="positionSelectState" onChange={this.selectState}>
-                            <option value="0">Staff</option>
+                            <option value="0">Developer</option>
                             <option value="1">Leader</option>
+                            <option value="2">Tester</option>
+                            <option value="3">Business Analyst</option>
                         </select>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out State!</div>

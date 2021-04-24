@@ -35,6 +35,34 @@ class DetailProject extends Component {
         });
     }
 
+    showState =(id) =>{
+        if(id == "0"){
+            return "Processing";
+        }else{
+            if((id == 1)){
+                return "Finished";
+            }else{
+                return "Upcoming";
+            }
+        }
+    }
+
+    showPosition = (id) =>{
+        if(id == "0"){
+            return "Developer";
+        }else{
+            if(id == "1"){
+                return "Leader";
+            }else{
+                if(id == "2"){
+                    return "Tester";
+                }else{
+                    return "Business Analyst";
+                }
+            }
+        }
+    }
+
 
     render() {
         return (
@@ -59,7 +87,7 @@ class DetailProject extends Component {
                     </tr>
                     <tr>
                         <td>State:</td>
-                        <td>{this.state.projectState===1 ? 'Finished' : 'Processing'}</td>
+                        <td>{this.showState(this.state.projectState)}</td>
                     </tr>
                 </table>
                 <br/>
@@ -74,7 +102,7 @@ class DetailProject extends Component {
                             employee => 
                             <tr key={employee.employee_id}>
                                 <td>{employee.employeeName}</td>
-                                <td>{employee.position===1? 'Leader' : 'Employee'}</td>
+                                <td>{this.showPosition(employee.position)}</td>
                             </tr>
                         )
                     }

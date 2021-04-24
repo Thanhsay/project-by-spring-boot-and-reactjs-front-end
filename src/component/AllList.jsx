@@ -28,6 +28,14 @@ class AllList extends Component {
         this.value.valueVariables.push({id: id, value: true})
     }
 
+    showState = (id) =>{
+        if(id == 1){
+            return "Finished";
+        }else{
+            return "Processing";
+        }
+    }
+
     showEmp = async(id) =>{
         for(let j = 0; j< this.value.valueVariables.length; j++){
             if(this.value.valueVariables[j].id == id){
@@ -35,6 +43,26 @@ class AllList extends Component {
                     let emp = [];
                     const res = await ProjectService.getDetailsEmployee(id);
                     emp = res.data;
+                    for(let i = 0; i<emp.length; i++){
+                        if(emp[i].position == '1'){
+                            emp[i].position = "Leader";
+                        }else{
+                            if(emp[i].position == '0'){
+                                emp[i].position = "Developer";
+                            }else{
+                                if(emp[i].position == '2'){
+                                    emp[i].position = "Tester";
+                                }else{
+                                    emp[i].position = "Business Analyst";
+                                }
+                            }
+                        };
+                        if(emp[i].state == '1'){
+                            emp[i].state = "Offical";
+                        }else{
+                            emp[i].state = "Trainee";
+                        }
+                    }
                     for(let i = 0; i<emp.length; i++){
                         $("#emp"+id).append("<tr class='removeEmp"+id+"'><td colspan = '5'></td><td>"+emp[i].employeeName+
                         "</td><td>"+emp[i].position+
@@ -53,6 +81,8 @@ class AllList extends Component {
 
         return (
             <div style={{display:"block"}}>
+                <h3 style={{textAlign: "center"}}>List Details</h3>
+                <br/>
                 <table className="table table-bordered">
                     <tr style={{textAlign: "center"}}>
                         <th colSpan="5">PROJECT</th>
@@ -77,7 +107,7 @@ class AllList extends Component {
                                         <td>{project.leadName}</td>
                                         <td>{project.projectStart}</td>
                                         <td>{project.projectEnd}</td>
-                                        <td>{project.projectState}</td>
+                                        <td>{this.showState(project.projectState)}</td>
                                         <td colSpan="5"></td>
                                     </tr>
                                     {
@@ -88,6 +118,7 @@ class AllList extends Component {
                         )
                     }
                 </table>
+                <br/>
             </div>
         );
     }

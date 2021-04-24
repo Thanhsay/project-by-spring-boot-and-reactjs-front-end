@@ -39,6 +39,34 @@ class DeleteEmployee extends Component {
         })
     }
 
+        showPosition = (id) =>{
+        if(id == "0"){
+            return "Developer";
+        }else{
+            if(id == "1"){
+                return "Leader";
+            }else{
+                if(id == "2"){
+                    return "Tester";
+                }else{
+                    return "Business Analyst";
+                }
+            }
+        }
+    }
+
+    showState =(id) =>{
+        if(id == "0"){
+            return "Processing";
+        }else{
+            if((id == 1)){
+                return "Finished";
+            }else{
+                return "Upcoming";
+            }
+        }
+    }
+
     render() {
         return (
             <div>
@@ -59,11 +87,11 @@ class DeleteEmployee extends Component {
                     </tr>
                     <tr>
                         <th>Position</th>
-                        <td>{this.state.position === 1 ? 'Leader' : 'Staff'}</td>
+                        <td>{this.showPosition(this.state.position)}</td>
                     </tr>
                     <tr>
                         <th>State</th>
-                        <td>{this.state.state === 1 ? 'Offical' : 'Trainee'}</td>
+                        <td>{this.showState(this.state.state)}</td>
                     </tr>
                 </table>   
                 <br/>

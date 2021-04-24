@@ -88,6 +88,17 @@ deleteState(name,id){
         }
 }
 
+showState =(id) =>{
+    if(id == "0"){
+        return "Processing";
+    }else{
+        if((id == 1)){
+            return "Finished";
+        }else{
+            return "Upcoming";
+        }
+    }
+}
 
 deleteProject(id){
     ProjectService.deleteProject(id).then(res =>{
@@ -143,7 +154,7 @@ deleteProject(id){
                                     <td>{project.projectStart}</td>
                                     <td>{project.projectEnd}</td>
                                     <td>{project.leadName}</td>
-                                    <td>{project.projectState===1 ? 'Finished' : 'Processing'}</td>
+                                    <td>{this.showState(project.projectState)}</td>
                                     {/* {this.getState()} */}
                                     <th>
                                         <button className="btn btn-secondary" 

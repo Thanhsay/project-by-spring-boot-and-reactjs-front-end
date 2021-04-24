@@ -137,11 +137,12 @@ class UpdateProject extends Component {
                         <div class="invalid-feedback">Please fill out Leader Name</div>
                     </div>
                     <div className="form-group">
-                        <label>State (Enter 1 if this project was successfully or 0 if it is being proccessed)</label>
+                        <label>State</label>
                         <select className="form-control"  onChange={this.selectState} 
                                 id="selectState" value={this.state.projectState}>
                             <option value="1">Finished</option>
                             <option value="0">Processing</option>
+                            <option value="2">Upcoming</option>
                         </select>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out State!</div>

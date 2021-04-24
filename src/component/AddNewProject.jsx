@@ -115,6 +115,7 @@ class AddNewProject extends Component {
                         <select className="form-control"  onChange={this.selectState} id="selectState">
                             <option value="1">Finished</option>
                             <option value="0">Processing</option>
+                            <option value="2">Upcoming</option>
                         </select>
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Please fill out State!</div>

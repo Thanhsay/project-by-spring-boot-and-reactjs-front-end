@@ -38,6 +38,22 @@ class ListEmployees extends Component {
         })
     }
 
+    showPosition = (id) =>{
+        if(id == "0"){
+            return "Developer";
+        }else{
+            if(id == "1"){
+                return "Leader";
+            }else{
+                if(id == "2"){
+                    return "Tester";
+                }else{
+                    return "Business Analyst";
+                }
+            }
+        }
+    }
+
     getIdUpdate = (id) =>{
         this.props.solveId(id);
 
@@ -119,7 +135,7 @@ class ListEmployees extends Component {
                                     <td>{employees.employeeName}</td>
                                     <td>{employees.gender === 1 ? 'Male' : 'Female'}</td>
                                     <td>{employees.age}</td>
-                                    <td>{employees.position === 1 ? 'Leader' : 'Staff'}</td>
+                                    <td>{this.showPosition(employees.position)}</td>
                                     <td>{employees.state === 1 ? 'Offical' : 'Trainee'}</td>
                                     <th>
                                         <button className="btn btn-secondary" type="button"
