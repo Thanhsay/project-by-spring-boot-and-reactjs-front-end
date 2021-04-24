@@ -69,8 +69,8 @@ class Headercomponent extends Component {
                         <h3 className="project-name">PROJECTS MANAGEMENT</h3>
                     </div>
                     <div className="col-sm-8 menu-bar">
-                        {this.props.auth.isLoggedIn ? adminLink : guestLink}
-                        {/* {adminLink} */}
+                        {/* {this.props.auth.isLoggedIn ? adminLink : guestLink} */}
+                        {adminLink}
                         <div className="search-container">
                             <form className>
                                 <Link to=""></Link>

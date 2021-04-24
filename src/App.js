@@ -18,6 +18,7 @@ import UpdateEmployee from './component/Employees/UpdateEmployee';
 import AddNewEmployee from './component/Employees/AddNewEmployee';
 import DetailsEmployee from './component/Employees/DetailsEmployee';
 import ResultSearch from './component/ResultSearch';
+import AllList from './component/AllList';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
               <Route path="/addEmp" component={AddNewEmployee}></Route>
               <Route path="/detailEmp" component={DetailsEmployee}></Route>
               <Route path="/resultSearch" component={ResultSearch}></Route>
+              <Route path="/allList" component={AllList}></Route>
             </Switch>
           </div> 
           {/* <Footer/> */}

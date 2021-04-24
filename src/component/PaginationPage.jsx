@@ -19,6 +19,7 @@ class PaginationPage extends Component {
         this.projectAdd = this.projectAdd.bind(this);
         this.projectList = this.projectList.bind(this);
         this.doDetail = this.doDetail.bind(this);
+        this.allList = this.allList.bind(this);
     }
 componentDidMount(){
     ProjectService.paginationPut(this.state.activePage).then( res =>{
@@ -74,6 +75,10 @@ projectAdd(){
     this.props.history.push('/add');
 }
 
+allList(){
+    this.props.history.push('/allList');
+}
+
 deleteState(name,id){
     const con = window.confirm("Do you want to delete project: "+name+ "?");
         if(con === true){
@@ -115,6 +120,7 @@ deleteProject(id){
                 <div className="menu-button">
                     <button className="btn btn-secondary" onClick={this.projectList}>List</button>
                     <button className="btn btn-secondary" onClick={this.projectAdd}>Add</button>
+                    <button className="btn btn-secondary" onClick={this.allList}>Show All List</button>
                 </div>
                 <table className="table table-hover">
                     <thead>

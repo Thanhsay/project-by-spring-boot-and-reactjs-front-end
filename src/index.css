@@ -144,3 +144,7 @@ code {
   margin-left: 10px;
   text-align: right;
 }
+
+.empColSpan{
+  column-span: 5;
+}
