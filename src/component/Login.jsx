@@ -42,6 +42,7 @@ class Login extends Component {
 
         setTimeout(()=>{
             if(this.props.auth.isLoggedIn){
+                sessionStorage.setItem("isLoggedin", true);
                 return this.props.history.push('/welcome');
              }else{
                  this.resetLogin();

@@ -1,7 +1,7 @@
 import {LOGIN_REQUEST, SUCCESS, FAILURE, LOGOUT} from './UtilType';
 
 const initialValue = {
-    isLoggedIn : ''
+    isLoggedIn : sessionStorage.getItem("isLoggedin")
 };
 
 const reducer = (state = initialValue, action) =>{

@@ -39,6 +39,9 @@ class Headercomponent extends Component {
     // }
 
     logOut = () =>{
+        if(sessionStorage.getItem("isLoggedin")){
+            sessionStorage.setItem("isLoggedin", false)
+        }
         this.props.logOut();
     }
 
@@ -62,6 +65,15 @@ class Headercomponent extends Component {
             </>
         )
 
+        const setLog = (value1, value2) =>{
+            if( value1 === true || value2 === "true"){
+                return adminLink;
+            }else{
+                return guestLink;
+            }
+        }
+
+
         return (
             <div className="header p-4 my-3 bg-dark text-white">
                 <div className="row">
@@ -69,8 +81,7 @@ class Headercomponent extends Component {
                         <h3 className="project-name">PROJECTS MANAGEMENT</h3>
                     </div>
                     <div className="col-sm-8 menu-bar">
-                        {/* {this.props.auth.isLoggedIn ? adminLink : guestLink} */}
-                        {adminLink}
+                        {setLog(this.props.auth.isLoggedIn, sessionStorage.getItem("isLoggedin"))}
                         <div className="search-container">
                             <form className>
                                 <Link to=""></Link>
