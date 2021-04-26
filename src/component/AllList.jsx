@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProjectService from '../service/ProjectService';
 import $, { event } from 'jquery';
+import ReactToExcel from 'react-html-table-to-excel'; 
 
 class AllList extends Component {
 
@@ -83,7 +84,7 @@ class AllList extends Component {
             <div style={{display:"block"}}>
                 <h3 style={{textAlign: "center"}}>List Details</h3>
                 <br/>
-                <table className="table table-bordered">
+                <table className="table table-bordered" id="table-to-xls">
                     <tr style={{textAlign: "center"}}>
                         <th colSpan="5">PROJECT</th>
                         <th colSpan="3">EMPLOYEE</th>
@@ -108,7 +109,7 @@ class AllList extends Component {
                                         <td>{project.projectStart}</td>
                                         <td>{project.projectEnd}</td>
                                         <td>{this.showState(project.projectState)}</td>
-                                        <td colSpan="5"></td>
+                                        <td colSpan="3"></td>
                                     </tr>
                                     {
                                         this.creatValue(project.project_id)
@@ -118,6 +119,15 @@ class AllList extends Component {
                         )
                     }
                 </table>
+                <ReactToExcel 
+                    className="btn export btn-secondary"
+                    table="table-to-xls"
+                    filename="excelFile"
+                    sheet="sheet 1"
+                    buttonText="EXPORT FILE TO EXCEL"
+                />
+                <br/>
+                <br/>
                 <br/>
             </div>
         );

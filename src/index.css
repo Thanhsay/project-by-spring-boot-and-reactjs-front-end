@@ -148,3 +148,7 @@ code {
 .empColSpan{
   column-span: 5;
 }
+
+.export{
+  float: right;
+}
